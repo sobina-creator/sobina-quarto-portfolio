@@ -1,18 +1,27 @@
-Welcome to My Portfolio! ￿
-Hello! My nickname is [YourNickNameLastInitial]. This is my Quarto data visualization
-portfolio showcasing my Python and matplotlib skills.
-5
-About This Portfolio
-This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualiza-
-tions into professional documents. Each chart below is created using matplotlib and embedded
-directly into this document.
-Simple Line Chart
-Let’s create a simple line chart showing some sample data:
+---
+title: "Welcome to My Portfolio!"
+format: html
+jupyter: python3
+---
+
+Hello! My nickname is [YourNickNameLastInitial]. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.
+
+## About This Portfolio
+
+This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents. Each chart below is created using matplotlib and embedded directly into this document.
+
+## Simple Line Chart
+
+Let's create a simple line chart showing some sample data:
+
+```{python}
 import matplotlib.pyplot as plt
 import numpy as np
+
 # Create sample data
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
+
 # Create the plot
 plt.figure(figsize=(7, 4.75))
 plt.plot(x, y, 'b-', linewidth=2, label='sin(x)')
@@ -22,59 +31,40 @@ plt.title('My First Matplotlib Chart')
 plt.grid(True, alpha=0.3)
 plt.legend()
 plt.show()
-6
-0 2 4 6 8 10
-X values
-1.00
-0.75
-0.50
-0.25
-0.00
-0.25
-0.50
-0.75
-1.00
-Y values
-My First Matplotlib Chart
-sin(x)Bar Chart Example
-Here’s a bar chart showing some sample data:
+```
+
+## Bar Chart Example
+
+Here's a bar chart showing some sample data:
+
+```{python}
+import matplotlib.pyplot as plt
+
 # Sample data for bar chart
 categories = ['A', 'B', 'C', 'D', 'E']
 values = [23, 45, 56, 78, 32]
+
 plt.figure(figsize=(7, 4.75))
 bars = plt.bar(categories, values, color=['red', 'green', 'blue', 'orange', 'purple'])
 plt.xlabel('Categories')
 plt.ylabel('Values')
 plt.title('Sample Bar Chart')
+
 # Add value labels on bars
 for bar, value in zip(bars, values):
-plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
-7
-str(value), ha='center', va='bottom')
-plt.show()A B C D E
-Categories
-0
-10
-20
-30
-40
-50
-60
-70
-80
-Values
-23
-45
-56
-78
-32
-Sample Bar Chart
+    plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
+             str(value), ha='center', va='bottom')
+plt.show()
+```
 
 ## Scatter Plot with Random Data
 
 Here's a scatter plot showing random data points:
 
 ```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Generate random data points
 np.random.seed(42)  # For reproducibility
 x_random = np.random.randn(100)
@@ -112,6 +102,8 @@ Whether you're analyzing data, creating reports, or building dashboards, matplot
 Here's a pie chart showing sample data distribution:
 
 ```{python}
+import matplotlib.pyplot as plt
+
 # Sample data for pie chart
 labels = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E']
 sizes = [25, 30, 15, 20, 10]
@@ -127,5 +119,6 @@ plt.show()
 ```
 
 ## Conclusion
-This demonstrates how Quarto can seamlessly integrate Python code and visualizations into
-professional documents that can be hosted publicly on GitHub Pages!
+
+This demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents that can be hosted publicly on GitHub Pages!
+pyth

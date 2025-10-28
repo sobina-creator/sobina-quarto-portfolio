@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "My Data Visualization Portfolio"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+execute:
+  freeze: auto
+
+jupyter: python3.14
