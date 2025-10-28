@@ -69,6 +69,63 @@ Values
 78
 32
 Sample Bar Chart
-Conclusion
+
+## Scatter Plot with Random Data
+
+Here's a scatter plot showing random data points:
+
+```{python}
+# Generate random data points
+np.random.seed(42)  # For reproducibility
+x_random = np.random.randn(100)
+y_random = np.random.randn(100)
+colors = np.random.rand(100)  # Random colors for each point
+
+plt.figure(figsize=(7, 4.75))
+scatter = plt.scatter(x_random, y_random, c=colors, cmap='viridis', 
+                      s=100, alpha=0.6, edgecolors='black', linewidth=0.5)
+plt.xlabel('Random X Values')
+plt.ylabel('Random Y Values')
+plt.title('Scatter Plot with Random Data Points')
+plt.colorbar(scatter, label='Color Scale')
+plt.grid(True, alpha=0.3)
+plt.show()
+```
+
+## What is Matplotlib?
+
+**Matplotlib** is one of the most popular data visualization libraries in Python. It was created by John D. Hunter in 2003 and has become the foundation for many other visualization libraries.
+
+### Why is Matplotlib Useful?
+
+- **Versatile**: Create a wide variety of plots including line charts, bar charts, scatter plots, histograms, pie charts, and more
+- **Customizable**: Fine-tune every aspect of your visualizations - colors, labels, legends, fonts, and styles
+- **Publication Quality**: Generate high-quality figures suitable for academic papers, presentations, and professional reports
+- **Wide Adoption**: Extensively used in data science, scientific research, and industry
+- **Integration**: Works seamlessly with NumPy, pandas, and other scientific Python libraries
+- **Export Options**: Save figures in multiple formats (PNG, PDF, SVG, etc.)
+
+Whether you're analyzing data, creating reports, or building dashboards, matplotlib provides the tools you need to communicate your insights visually.
+
+## Pie Chart Example
+
+Here's a pie chart showing sample data distribution:
+
+```{python}
+# Sample data for pie chart
+labels = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E']
+sizes = [25, 30, 15, 20, 10]
+colors = ['#ff9999', '#66b3ff', '#99ff99', '#ffcc99', '#ff99cc']
+explode = (0.1, 0, 0, 0, 0)  # Explode the 1st slice
+
+plt.figure(figsize=(7, 6))
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+plt.title('Sample Market Share Distribution')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
+plt.show()
+```
+
+## Conclusion
 This demonstrates how Quarto can seamlessly integrate Python code and visualizations into
 professional documents that can be hosted publicly on GitHub Pages!
