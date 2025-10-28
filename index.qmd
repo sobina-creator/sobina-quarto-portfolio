@@ -1,7 +1,74 @@
-What you’re about to see (Sobina) is called YAML front-matter
-- and yes, YAML stands for “YAML Ain’t Markup Language” (because the original
-acronym was “Yet Another Markup Language” and they got meta with it! ￿).
-Think of it as the control panel for your Quarto document - it’s where you tell Quarto
-how to dress up your content. Want HTML? PDF? Should code run or just show? It’s
-all configured here in this little language-within-a-language that makes your markdown
-document go from “meh” to “WOW!” ￿
+Welcome to My Portfolio! ￿
+Hello! My nickname is [YourNickNameLastInitial]. This is my Quarto data visualization
+portfolio showcasing my Python and matplotlib skills.
+5
+About This Portfolio
+This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualiza-
+tions into professional documents. Each chart below is created using matplotlib and embedded
+directly into this document.
+Simple Line Chart
+Let’s create a simple line chart showing some sample data:
+import matplotlib.pyplot as plt
+import numpy as np
+# Create sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+# Create the plot
+plt.figure(figsize=(7, 4.75))
+plt.plot(x, y, 'b-', linewidth=2, label='sin(x)')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.title('My First Matplotlib Chart')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.show()
+6
+0 2 4 6 8 10
+X values
+1.00
+0.75
+0.50
+0.25
+0.00
+0.25
+0.50
+0.75
+1.00
+Y values
+My First Matplotlib Chart
+sin(x)Bar Chart Example
+Here’s a bar chart showing some sample data:
+# Sample data for bar chart
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [23, 45, 56, 78, 32]
+plt.figure(figsize=(7, 4.75))
+bars = plt.bar(categories, values, color=['red', 'green', 'blue', 'orange', 'purple'])
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Sample Bar Chart')
+# Add value labels on bars
+for bar, value in zip(bars, values):
+plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
+7
+str(value), ha='center', va='bottom')
+plt.show()A B C D E
+Categories
+0
+10
+20
+30
+40
+50
+60
+70
+80
+Values
+23
+45
+56
+78
+32
+Sample Bar Chart
+Conclusion
+This demonstrates how Quarto can seamlessly integrate Python code and visualizations into
+professional documents that can be hosted publicly on GitHub Pages!
