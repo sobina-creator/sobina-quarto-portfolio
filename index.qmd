@@ -4,7 +4,7 @@ format: html
 jupyter: python3
 ---
 
-Hello! My nickname is [YourNickNameLastInitial]. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.
+Hello! My nickname is [Sobina]. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.
 
 ## About This Portfolio
 
